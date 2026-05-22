@@ -1,216 +1,233 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LLM YouTube Monitor</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #0a0a0a;
-            padding: 20px;
-        }
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 16px;
-            padding: 24px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-        h1 {
-            font-size: 2rem;
-            color: #1a1a2e;
-            margin-bottom: 8px;
-        }
-        .subtitle {
-            color: #666;
-            margin-bottom: 24px;
-            padding-bottom: 16px;
-            border-bottom: 2px solid #e0e0e0;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th {
-            background: #1a1a2e;
-            color: white;
-            padding: 12px;
-            text-align: left;
-            font-weight: 600;
-        }
-        td {
-            padding: 12px;
-            border-bottom: 1px solid #e0e0e0;
-            vertical-align: top;
-        }
-        tr:hover {
-            background: #f8f9fa;
-        }
-        .channel-name {
-            font-weight: 700;
-            color: #e94560;
-        }
-        .video-title a {
-            color: #1a1a2e;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .video-title a:hover {
-            color: #e94560;
-            text-decoration: underline;
-        }
-        .publish-date {
-            font-size: 0.75rem;
-            color: #888;
-            margin-top: 4px;
-        }
-        .topic-tag {
-            display: inline-block;
-            background: #e0e7ff;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            margin: 2px;
-            color: #1a1a2e;
-        }
-        .key-quote {
-            background: #fef5e7;
-            padding: 8px 12px;
-            border-left: 3px solid #e94560;
-            margin: 5px 0;
-            font-size: 0.85rem;
-            font-style: italic;
-            color: #4a5568;
-        }
-        .summary {
-            font-size: 0.85rem;
-            line-height: 1.4;
-            color: #4a5568;
-        }
-        .last-updated {
-            text-align: center;
-            color: #888;
-            margin-top: 24px;
-            padding-top: 16px;
-            border-top: 1px solid #e0e0e0;
-            font-size: 0.8rem;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>🤖 LLM YouTube Monitor</h1>
-        <p class="subtitle">What top AI creators actually say about Large Language Models — from video transcripts</p>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Channel</th>
-                    <th>Video</th>
-                    <th>Topics</th>
-                    <th>Key Quote</th>
-                    <th>Summary</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Row 1 -->
-                <tr>
-                    <td><span class="channel-name">Andrej Karpathy</span></td>
-                    <td class="video-title">
-                        <a href="#" target="_blank">Building GPT from scratch</a>
-                        <div class="publish-date">📅 2025-05-18</div>
-                    </td>
-                    <td>
-                        <span class="topic-tag">Transformers</span>
-                        <span class="topic-tag">Attention</span>
-                        <span class="topic-tag">GPT</span>
-                    </td>
-                    <td>
-                        <div class="key-quote">"We're going to build a GPT from scratch, line by line..."</div>
-                    </td>
-                    <td class="summary">Step-by-step implementation of GPT architecture from basics</td>
-                </tr>
-                <!-- Row 2 -->
-                <tr>
-                    <td><span class="channel-name">Yannic Kilcher</span></td>
-                    <td class="video-title">
-                        <a href="#" target="_blank">RLHF explained: The secret behind ChatGPT</a>
-                        <div class="publish-date">📅 2025-05-16</div>
-                    </td>
-                    <td>
-                        <span class="topic-tag">RLHF</span>
-                        <span class="topic-tag">Alignment</span>
-                        <span class="topic-tag">ChatGPT</span>
-                    </td>
-                    <td>
-                        <div class="key-quote">"Reinforcement learning from human feedback is what makes ChatGPT actually useful..."</div>
-                    </td>
-                    <td class="summary">Deep dive into RLHF mechanics and why alignment matters</td>
-                </tr>
-                <!-- Row 3 -->
-                <tr>
-                    <td><span class="channel-name">AI Engineer</span></td>
-                    <td class="video-title">
-                        <a href="#" target="_blank">Building RAG systems that actually work</a>
-                        <div class="publish-date">📅 2025-05-14</div>
-                    </td>
-                    <td>
-                        <span class="topic-tag">RAG</span>
-                        <span class="topic-tag">Vector DB</span>
-                        <span class="topic-tag">Embeddings</span>
-                    </td>
-                    <td>
-                        <div class="key-quote">"Chunking strategy matters more than which embedding model you choose..."</div>
-                    </td>
-                    <td class="summary">Practical advice for production RAG implementations</td>
-                </tr>
-                <!-- Row 4 -->
-                <tr>
-                    <td><span class="channel-name">Umar Jamil</span></td>
-                    <td class="video-title">
-                        <a href="#" target="_blank">Attention is all you need — implemented from scratch</a>
-                        <div class="publish-date">📅 2025-05-12</div>
-                    </td>
-                    <td>
-                        <span class="topic-tag">Attention</span>
-                        <span class="topic-tag">Transformers</span>
-                        <span class="topic-tag">Implementation</span>
-                    </td>
-                    <td>
-                        <div class="key-quote">"The attention mechanism is just a weighted sum with learned weights..."</div>
-                    </td>
-                    <td class="summary">Coding the transformer paper from scratch with explanations</td>
-                </tr>
-                <!-- Row 5 -->
-                <tr>
-                    <td><span class="channel-name">Latent Space</span></td>
-                    <td class="video-title">
-                        <a href="#" target="_blank">Agents: The next wave of LLM applications</a>
-                        <div class="publish-date">📅 2025-05-10</div>
-                    </td>
-                    <td>
-                        <span class="topic-tag">AI Agents</span>
-                        <span class="topic-tag">Tool Use</span>
-                        <span class="topic-tag">Planning</span>
-                    </td>
-                    <td>
-                        <div class="key-quote">"The real breakthrough is giving LLMs tools and letting them plan..."</div>
-                    </td>
-                    <td class="summary">Discussion on agent architectures and real-world use cases</td>
-                </tr>
-            </tbody>
-        </table>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LLM YouTube Monitor</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>LLM YouTube Monitor</h1>
 
-        <div class="last-updated">
-            ⏱️ Last updated: 2025-05-20 14:30:00 UTC | Auto-updates every 6 hours
+            <table>
+                <thead>
+                    <tr>
+                        <th>Channel</th>
+                        <th>Video</th>
+                        <th>Topics</th>
+                        <th>Key Quote</th>
+                        <th>Summary</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+            <tr>
+                <td><span class="channel-name">AndrejKarpathy</span></td>
+                <td class="video-title">
+                    <a href="https://youtube.com/watch?v=EWvNQjAaOHw" target="_blank">How I use LLMs</a>
+                    <div class="publish-date">2025-02-27</div>
+                </td>
+                <td><span class="topic-tag">Introduction to Large Language Models</span> <span class="topic-tag">Applications of LLMs</span> <span class="topic-tag">LLM Series on YouTube</span> </td>
+                <td><div class="key-quote">"hi everyone so in this video I wouldlike to continue our general audienceseries on large language models"</div><div class="key-quote">"deep diveinto llms that you can find on myYouTube"</div></td>
+                <td class="summary">The speaker introduces a video on using Large Language Models as part of a series on the topic.</td>
+            </tr>
+            
+            <tr>
+                <td><span class="channel-name">AndrejKarpathy</span></td>
+                <td class="video-title">
+                    <a href="https://youtube.com/watch?v=7xTGNNLPyMI" target="_blank">Deep Dive into LLMs like ChatGPT</a>
+                    <div class="publish-date">2025-02-05</div>
+                </td>
+                <td><span class="topic-tag">Introduction to Large Language Models</span> <span class="topic-tag">ChatGPT Overview</span> <span class="topic-tag">LLM Applications</span> </td>
+                <td><div class="key-quote">"I've wanted to make this video for a while"</div><div class="key-quote">"a comprehensive but General audience introduction to large language models like ChatGPT"</div></td>
+                <td class="summary">The video provides a comprehensive introduction to large language models like ChatGPT for a general audience.</td>
+            </tr>
+            
+            <tr>
+                <td><span class="channel-name">AndrejKarpathy</span></td>
+                <td class="video-title">
+                    <a href="https://youtube.com/watch?v=l8pRSuU81PU" target="_blank">Let's reproduce GPT-2 (124M)</a>
+                    <div class="publish-date">2024-06-09</div>
+                </td>
+                <td><span class="topic-tag">GPT-2 Model Reproduction</span> <span class="topic-tag">Large Language Models (LLMs)</span> <span class="topic-tag">AI Model Training</span> </td>
+                <td><div class="key-quote">"today we are going to be continuing our Zero to Hero series"</div><div class="key-quote">"reproduce the gpt2 model the 124 million version of it"</div></td>
+                <td class="summary">The video is about reproducing the 124 million version of the GPT-2 model as part of the Zero to Hero series.</td>
+            </tr>
+            
+            <tr>
+                <td><span class="channel-name">DwarkeshPatel</span></td>
+                <td class="video-title">
+                    <a href="https://youtube.com/watch?v=jcFEW1ckpU4" target="_blank">Why Wasn't Intelligence 'Maxed Out' Before the Bronze Age? - David Reich</a>
+                    <div class="publish-date">2026-05-21</div>
+                </td>
+                <td><span class="topic-tag">Human Intelligence</span> <span class="topic-tag">Genetic Diversity</span> <span class="topic-tag">Bronze Age</span> </td>
+                <td><div class="key-quote">"It's surprising to me things like intelligence, things just seem kind of robustly good were not maxed out before the Bronze Age."</div><div class="key-quote">"The diversity among different populations was so big"</div></td>
+                <td class="summary">The speaker, David Reich, discusses the surprising fact that human intelligence was not maximized before the Bronze Age despite its robustness.</td>
+            </tr>
+            
+            <tr>
+                <td><span class="channel-name">DwarkeshPatel</span></td>
+                <td class="video-title">
+                    <a href="https://youtube.com/watch?v=zqISzCijgJI" target="_blank">The Stone Age Breakthrough Hiding in Plain Sight - David Reich</a>
+                    <div class="publish-date">2026-05-20</div>
+                </td>
+                <td><span class="topic-tag">Archaeology</span> <span class="topic-tag">Stone Age Technology</span> <span class="topic-tag">Human Migration</span> <span class="topic-tag">Ancient Tool Development</span> </td>
+                <td><div class="key-quote">"the new way of making stone tools"</div><div class="key-quote">"these cores that were very carefully mined far away from the locations they were used"</div></td>
+                <td class="summary">The speaker, David Reich, discusses the breakthroughs in understanding the Stone Age, particularly the development and spread of new stone tool technologies.</td>
+            </tr>
+            
+            <tr>
+                <td><span class="channel-name">DwarkeshPatel</span></td>
+                <td class="video-title">
+                    <a href="https://youtube.com/watch?v=gyYzU4gDA-k" target="_blank">Humans Share the Same Genetic Toolkit - David Reich</a>
+                    <div class="publish-date">2026-05-18</div>
+                </td>
+                <td><span class="topic-tag">Genetic Ancestry</span> <span class="topic-tag">Human Evolution</span> <span class="topic-tag">Population Genetics</span> </td>
+                <td><div class="key-quote">"Khoisan from Southern Africa or Central African rainforest hunter-gatherers have substantial fractions of their ancestry from groups that diverged maybe 200,000 years ago from the other lineages."</div><div class="key-quote">"Humans Share the Same Genetic Toolkit"</div></td>
+                <td class="summary">The speaker, David Reich, discusses how despite genetic differences, humans share a common genetic toolkit and explains the ancestry of certain groups such as the Khoisan from Southern Africa.</td>
+            </tr>
+            
+            <tr>
+                <td><span class="channel-name">WesRoth</span></td>
+                <td class="video-title">
+                    <a href="https://youtube.com/watch?v=kpKb7LI__78" target="_blank">we are NOT PREPARED for the end of 2026</a>
+                    <div class="publish-date">2026-05-22</div>
+                </td>
+                <td><span class="topic-tag">Space-Based Solar Power</span> <span class="topic-tag">Artificial Intelligence</span> <span class="topic-tag">Technological Advancements</span> <span class="topic-tag">Sustainability</span> </td>
+                <td><div class="key-quote">"he's going to be able to beam electricity back to Earth from space"</div><div class="key-quote">"I'm not okay with that"</div></td>
+                <td class="summary">The speaker discusses their concerns about Mark Zuckerberg's plans to beam electricity back to Earth from space and other emerging technologies.</td>
+            </tr>
+            
+            <tr>
+                <td><span class="channel-name">WesRoth</span></td>
+                <td class="video-title">
+                    <a href="https://youtube.com/watch?v=cSZ-y49e5q8" target="_blank">Google entered the "AGENTIC ERA"</a>
+                    <div class="publish-date">2026-05-20</div>
+                </td>
+                <td><span class="topic-tag">LLM Evolution</span> <span class="topic-tag">AI Agents</span> <span class="topic-tag">Google I/O</span> </td>
+                <td><div class="key-quote">"All techevolves into agents"</div><div class="key-quote">"Google just unleashed the era of agents"</div></td>
+                <td class="summary">Google has entered the agentic era, where technology evolves into AI agents, as announced at Google I/O.</td>
+            </tr>
+            
+            <tr>
+                <td><span class="channel-name">WesRoth</span></td>
+                <td class="video-title">
+                    <a href="https://youtube.com/watch?v=pAZx6pDstaE" target="_blank">GOOGLE IO   |  LET"S GOOOOOOOOOOOOOOOOOO!!!</a>
+                    <div class="publish-date">2026-05-19</div>
+                </td>
+                <td><span class="topic-tag">Google I/O Event</span> <span class="topic-tag">Artificial Intelligence Introduction</span> </td>
+                <td><div class="key-quote">"Welcome, welcome, welcome"</div><div class="key-quote">"we're about ready to get started"</div></td>
+                <td class="summary">The speaker is preparing to start a presentation or livestream about the Google I/O event.</td>
+            </tr>
+            
+            <tr>
+                <td><span class="channel-name">AIExplained</span></td>
+                <td class="video-title">
+                    <a href="https://youtube.com/watch?v=o_av1b9rs2g" target="_blank">Two Rival Bets on AGI: Google I/O Highlights</a>
+                    <div class="publish-date">2026-05-20</div>
+                </td>
+                <td><span class="topic-tag">Google AI event</span> <span class="topic-tag">AGI (Artificial General Intelligence)</span> <span class="topic-tag">LLM (Large Language Models)</span> <span class="topic-tag">AI models</span> </td>
+                <td><div class="key-quote">"Two Rival Bets on AGI"</div><div class="key-quote">"eight moments that for me point toward the bigger stories behind yesterday's multi-hour long Google AI event"</div></td>
+                <td class="summary">The video discusses key highlights from Google I/O, focusing on AGI and AI models.</td>
+            </tr>
+            
+            <tr>
+                <td><span class="channel-name">AIExplained</span></td>
+                <td class="video-title">
+                    <a href="https://youtube.com/watch?v=jz0rNhfAKo8" target="_blank">GPT 5.5 Arrives, DeepSeek V4 Drops, and the Compute War Intensifies</a>
+                    <div class="publish-date">2026-04-24</div>
+                </td>
+                <td><span class="topic-tag">GPT-5.5</span> <span class="topic-tag">DeepSeek V4</span> <span class="topic-tag">Compute War</span> <span class="topic-tag">LLM Models</span> </td>
+                <td><div class="key-quote">"GPT-5.5 is OpenAI's all-out attempt to keep the AI crown from slipping to Anthropic"</div><div class="key-quote">"In the last 20 hours in AI, we have gotten two new models that could influence how a billion people use AI"</div></td>
+                <td class="summary">The video discusses the release of GPT-5.5 and DeepSeek V4, and how these models may impact the AI landscape.</td>
+            </tr>
+            
+            <tr>
+                <td><span class="channel-name">AIExplained</span></td>
+                <td class="video-title">
+                    <a href="https://youtube.com/watch?v=QVJcdfkRpH8" target="_blank">Claude Opus 4.7 - A New Frontier, in Performance … and Drama</a>
+                    <div class="publish-date">2026-04-17</div>
+                </td>
+                <td><span class="topic-tag">AI Model Performance</span> <span class="topic-tag">Controversy in AI</span> <span class="topic-tag">Benchmarking AI</span> </td>
+                <td><div class="key-quote">"The kind of best AI model is here, Claude Opus 4.7, but it does bring with it a ton of controversy"</div><div class="key-quote">"It's been out less than 24 hours, but I'm going to cover not only the bonanza of benchmarks that came"</div></td>
+                <td class="summary">The video discusses the release of Claude Opus 4.7, a new AI model, and its performance and controversy surrounding it.</td>
+            </tr>
+            
+            <tr>
+                <td><span class="channel-name">KrishNaik</span></td>
+                <td class="video-title">
+                    <a href="https://youtube.com/watch?v=rV3HJ4LEZ7k" target="_blank">Complete Agentic AI Course In 10 Hours- Langchain, Langgraph, RAG,Vectorless RAG, Guardrails,Evals</a>
+                    <div class="publish-date">2026-05-21</div>
+                </td>
+                <td><span class="topic-tag">Langchain</span> <span class="topic-tag">Langgraph</span> <span class="topic-tag">RAG</span> <span class="topic-tag">Vectorless RAG</span> </td>
+                <td><div class="key-quote">"Complete Agentic AI Course In 10 Hours"</div><div class="key-quote">"super excited to bring this specific video"</div></td>
+                <td class="summary">This 10-hour YouTube video provides a comprehensive course on Agentic AI, covering various topics including Langchain, Langgraph, RAG, and Vectorless RAG.</td>
+            </tr>
+            
+            <tr>
+                <td><span class="channel-name">KrishNaik</span></td>
+                <td class="video-title">
+                    <a href="https://youtube.com/watch?v=RN3baOpNA6w" target="_blank">What Are LLM Gateways With Detailed Implementation</a>
+                    <div class="publish-date">2026-05-19</div>
+                </td>
+                <td><span class="topic-tag">Agentic AI Applications</span> <span class="topic-tag">AI Agents</span> <span class="topic-tag">Generative AI Applications</span> <span class="topic-tag">LLM Gateways</span> </td>
+                <td><div class="key-quote">"if you are specifically building an agentic AI application or AI agents"</div><div class="key-quote">"or any kind of generative AI applications"</div></td>
+                <td class="summary">The video discusses LLM gateways and their implementation in building agentic AI applications, AI agents, and generative AI applications.</td>
+            </tr>
+            
+            <tr>
+                <td><span class="channel-name">KrishNaik</span></td>
+                <td class="video-title">
+                    <a href="https://youtube.com/watch?v=UzLBz1Dv_Y8" target="_blank">Modern No-Code AI Route : AI Generalist to AI Builder Induction Session</a>
+                    <div class="publish-date">2026-05-18</div>
+                </td>
+                <td></td>
+                <td></td>
+                <td class="summary">The speaker is waiting for more people to join before starting the session on the Modern No-Code AI Route.</td>
+            </tr>
+            
+            <tr>
+                <td><span class="channel-name">SebastianRaschka</span></td>
+                <td class="video-title">
+                    <a href="https://youtube.com/watch?v=TXzQ7PGpO6w" target="_blank">What I Learned From Implementing LLM Architectures From Scratch (And How to Get Started)</a>
+                    <div class="publish-date">2026-05-12</div>
+                </td>
+                <td><span class="topic-tag">LLM Architectures</span> <span class="topic-tag">Python Implementation</span> <span class="topic-tag">Getting Started with LLMs</span> </td>
+                <td><div class="key-quote">"So, first I want to define what it means when we are saying we are running LLMs in Python"</div><div class="key-quote">"I put together this LLMs in Python talk and there are a couple of things I want to discuss today"</div></td>
+                <td class="summary">The speaker discusses their experience implementing LLM architectures from scratch in Python and shares key takeaways for getting started.</td>
+            </tr>
+            
+            <tr>
+                <td><span class="channel-name">SebastianRaschka</span></td>
+                <td class="video-title">
+                    <a href="https://youtube.com/watch?v=CepbWmGie0E" target="_blank">A Visual Tour of Modern LLM Architectures</a>
+                    <div class="publish-date">2026-03-28</div>
+                </td>
+                <td><span class="topic-tag">LLM Architectures</span> <span class="topic-tag">AI Model Development</span> <span class="topic-tag">Reasoning Models</span> </td>
+                <td><div class="key-quote">"I have been really busy on multiple fronts, writing articles, finishing up my build a reasoning model from scratch book"</div><div class="key-quote">"I just submitted the"</div></td>
+                <td class="summary">The speaker discusses their recent activities, including writing articles and working on a book about building a reasoning model from scratch, before diving into a visual tour of modern LLM architectures.</td>
+            </tr>
+            
+            <tr>
+                <td><span class="channel-name">SebastianRaschka</span></td>
+                <td class="video-title">
+                    <a href="https://youtube.com/watch?v=lONyteDR4XE" target="_blank">LLM Building Blocks & Transformer Alternatives</a>
+                    <div class="publish-date">2025-10-27</div>
+                </td>
+                <td><span class="topic-tag">LLM Building Blocks</span> <span class="topic-tag">Transformer Alternatives</span> <span class="topic-tag">AI Model Architecture</span> </td>
+                <td><div class="key-quote">"I was recently putting together some slides for an in-person event, a 20-minute in-person event"</div><div class="key-quote">"and I thought it might be interesting to just record to see if it's indeed 20 minutes"</div></td>
+                <td class="summary">The speaker discusses the main building blocks of Large Language Models and explores alternative architectures to the traditional transformer model.</td>
+            </tr>
+            
+                </tbody>
+            </table>
+
+            <div class="last-updated">
+                Last updated: 2026-05-22 17:40:43 GMM+6
+            </div>
         </div>
-    </div>
-</body>
-</html>
+    </body>
+    </html>
+    
