@@ -4,7 +4,7 @@ from googleapiclient.discovery import build
 from youtube_transcript_api import YouTubeTranscriptApi
 import time
 import lib
-from google.genai.errors import ClientError
+import os
 
 CHANNEL_IDS = {
     "AndrejKarpathy" : "UCXUPKJO5MZQN11PqgIvyuvQ",
@@ -14,6 +14,9 @@ CHANNEL_IDS = {
     "KrishNaik" : "UCNU_lfiiWBdtULKOw6X0Dig",
     "SebastianRaschka" : "UC_CzsS7UTjcxJ-xXp1ftxtA"
 }
+
+YT_API_KEY = os.environ.get("YT_API_KEY")
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 
 youtube = build('youtube', 'v3', developerKey=YT_API_KEY)
 
