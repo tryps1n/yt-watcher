@@ -6,9 +6,6 @@ import time
 import lib
 from google.genai.errors import ClientError
 
-GROQ_API_KEY = "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"
-YT_API_KEY = "AIzaSyAcnJUalBErwLO8gM-yxF0gfnCn6SInNjA"
-
 CHANNEL_IDS = {
     "AndrejKarpathy" : "UCXUPKJO5MZQN11PqgIvyuvQ",
     "DwarkeshPatel" : "UCXl4i9dYBrFOabk0xGmbkRA",
