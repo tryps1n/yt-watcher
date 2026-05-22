@@ -61,7 +61,7 @@ def write_html(all_topics):
             </table>
 
             <div class="last-updated">
-                Last updated: {str(datetime.datetime.now().replace(microsecond=0))} GMM+6
+                Last updated: {str(datetime.datetime.now().replace(microsecond=0))} GMT+6
             </div>
         </div>
     </body>
